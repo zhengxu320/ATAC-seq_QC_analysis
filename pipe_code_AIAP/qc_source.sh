@@ -12,24 +12,25 @@ pipe_path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # common tools:
 adapter_1="CTGTCTCTTATACACATCT"
 adapter_2="CTGTCTCTTATACACATCT"
-fastq_dump_tool='fastq-dump.2.10.0'
-preseq="preseq"
-cutadapt="/usr/local/bin/cutadapt"
-fastqc="/opt/miniconda/bin/fastqc"
-samtools="/usr/local/bin/samtools"
-bwa="/opt/bwa-0.7.16a//bwa"
-methylQA="/opt/methylQA//methylQA"
-macs2="/usr/local/bin/macs2"
+fastq_dump_tool='fastq-dump.2.10.0' #Command not found, but not important cause our test file format is not sra, so it will not be used
+preseq="/opt/preseq_v2.0/preseq" #Changed the path from only name to full path, to make it work,(at least it will give some output when input 'preseq')
+cutadapt="/usr/local/bin/cutadapt" #Exsiting
+fastqc="/opt/miniconda/bin/fastqc" #Exsiting, but need to actiave conda first: source /opt/miniconda/bin/activate
+samtools="/usr/local/bin/samtools" #Exsiting
+bwa="/opt/bwa-0.7.16a//bwa" #Exsiting
+methylQA="/opt/methylQA//methylQA" #Command not found,but if input the full path, it will give some output
+macs2="/usr/local/bin/macs2" #Exsiting
 
 # genome specific resources:
+# I added the full path for each file, to make it work
 if [[ $species == mm10 ]]; 
 	then
-	bwa_ref="/atac_seq/Resource/Genome/mm10/bwa_index_mm10/mm10.fa"
-	chrom_size="/atac_seq/Resource/Genome/mm10/mm10.chrom.sizes"
-	black_list="/atac_seq/Resource/Genome/mm10/mm10_black_list.bed"
+	bwa_ref="/storage1/fs1/hprc/Active/xu.z1/AIAP_test_source/atac_seq/Resource/Genome/mm10/bwa_index_mm10/mm10.fa"
+	chrom_size="/storage1/fs1/hprc/Active/xu.z1/AIAP_test_source/atac_seq/Resource/Genome/mm10/mm10.chrom.sizes"
+	black_list="/storage1/fs1/hprc/Active/xu.z1/AIAP_test_source/atac_seq/Resource/Genome/mm10/mm10_black_list.bed"
 	genome_size=2730871774
-	promoter_file="/atac_seq/Resource/Genome/mm10/mm10_promoter_bistream_1kb.bed"
-	coding_promoter="/atac_seq/Resource/Genome/mm10/mm10_promoter_coding_bistream_1kb.bed"
+	promoter_file="/storage1/fs1/hprc/Active/xu.z1/AIAP_test_source/atac_seq/Resource/Genome/mm10/mm10_promoter_bistream_1kb.bed"
+	coding_promoter="/storage1/fs1/hprc/Active/xu.z1/AIAP_test_source/atac_seq/Resource/Genome/mm10/mm10_promoter_coding_bistream_1kb.bed"
 	macs2_genome='mm'
 elif [[ $species == mm9 ]];
 	then
