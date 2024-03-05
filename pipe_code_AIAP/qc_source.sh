@@ -41,14 +41,14 @@ elif [[ $species == mm9 ]];
 	promoter_file="/atac_seq/Resource/Genome/mm9/mm9_promoter_bistream_1kb.bed"
 	coding_promoter="/atac_seq/Resource/Genome/mm9/mm9_coding_promoter_bistream_1kb.bed"
 	macs2_genome='mm'
-elif [[ $species == hg38 ]];
+elif [[ $species == hg38 ]]; #Edited the path to full path of AIAP_test_real to run the pipeline for hprc data
 	then
-	bwa_ref="/atac_seq/Resource/Genome/hg38/bwa_index_hg38.25/hg38.25_chromsome.fa"
-	chrom_size="/atac_seq/Resource/Genome/hg38/hg38.25_chromsome.sizes"
-	black_list="/atac_seq/Resource/Genome/hg38/hg38_black_list.bed"
+	bwa_ref="/storage1/fs1/hprc/Active/xu.z1/AIAP_test_real/atac_seq/Resource/Genome/hg38/bwa_index_hg38.25/hg38.25_chromsome.fa"
+	chrom_size="/storage1/fs1/hprc/Active/xu.z1/AIAP_test_real/atac_seq/Resource/Genome/hg38/hg38.25_chromsome.sizes"
+	black_list="/storage1/fs1/hprc/Active/xu.z1/AIAP_test_real/atac_seq/Resource/Genome/hg38/hg38_black_list.bed"
 	genome_size=3209286105
-	promoter_file="/atac_seq/Resource/Genome/hg38/hg38_promoter_bistream_1kb.bed"
-	coding_promoter="/atac_seq/Resource/Genome/hg38/hg38_coding_promoter_bistream_1kb.bed"
+	promoter_file="/storage1/fs1/hprc/Active/xu.z1/AIAP_test_real/atac_seq/Resource/Genome/hg38/hg38_promoter_bistream_1kb.bed"
+	coding_promoter="/storage1/fs1/hprc/Active/xu.z1/AIAP_test_real/atac_seq/Resource/Genome/hg38/hg38_coding_promoter_bistream_1kb.bed"
 	macs2_genome='hs'
 elif [[ $species == hg19 ]];
 	then
